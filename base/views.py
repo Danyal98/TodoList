@@ -1,0 +1,42 @@
+from django.shortcuts import render, redirect
+from .models import Room
+from .forms import RoomForm
+
+# rooms = [
+#     {'id': 1, 'name': 'Lets Learn Python!'},
+#     {'id': 2, 'name': 'Design with Me!'},
+#     {'id': 3, 'name': 'Frontend Developer!'},
+#     {'id': 4, 'name': 'Data Scientists'},
+# ]
+
+
+def home(request):
+    rooms = Room.objects.all()
+    return render(request, 'base/home.html', {'rooms': rooms})
+
+def room(request, pk):
+    room = Room.objects.get(id=pk)
+    context = {'room': room}
+    return render(request, 'base/room.html', context)
+
+def create_Room(request):
+    form = RoomForm()
+    if request.method == 'POST':
+        form = RoomForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    context = {'form': form}
+    return render(request, "base/room_form.html", context)
+
+def Update_Room(request, pk):
+    room = Room.objects.get(id = pk)
+    form = RoomForm(instance = room)
+
+    if request.method == 'POST':
+        form = RoomForm(request.POST, instance = room)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    context = {'form': form}
+    return render (request, 'base/room_form.html', context)
