@@ -1,7 +1,4 @@
-from pyexpat import model
-from turtle import title
 from django.db import models
-from datetime import datetime, date
 
 # Create your models here.
 class Tasks(models.Model):
