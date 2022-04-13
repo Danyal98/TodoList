@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-!&qg&n*&-l+&*zbk*bbyh&1mcz_e@x0k3x^(r&9j42c*#(f=bv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -151,7 +151,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:8000",
-    "http://localhost:3000"
+    "http://localhost:3000",
+    "https://todo-list98.herokuapp.com/"
 ]
 
 prod_db = dj_database_url.config(conn_max_age=500)
