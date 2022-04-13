@@ -53,7 +53,7 @@ class App extends React.Component {
   fetchTasks() {
     console.log("Fetching");
 
-    fetch("http://127.0.0.1:8000/api/task-list")
+    fetch("/api/task-list")
       .then((response) => response.json())
       .then((data) =>
         this.setState({
@@ -79,10 +79,10 @@ class App extends React.Component {
     console.log("Item", this.state.activeItem);
     var csrftoken = this.getCookie("csrftoken");
 
-    var url = "http://127.0.0.1:8000/api/task-create";
+    var url = "/api/task-create";
 
     if (this.state.editing === true) {
-      url = `http://127.0.0.1:8000/api/task-update/${this.state.activeItem.id}/`;
+      url = `/api/task-update/${this.state.activeItem.id}/`;
       this.setState({
         editing: false,
       });
@@ -122,7 +122,7 @@ class App extends React.Component {
 
   deleteItem(task) {
     var csrftoken = this.getCookie("csrftoken");
-    fetch(`http://127.0.0.1:8000/api/task-delete/${task.id}/`, {
+    fetch(`/api/task-delete/${task.id}/`, {
       method: "DELETE",
       headers: {
         "Content-type": "application/json",
@@ -136,7 +136,7 @@ class App extends React.Component {
   strikeUnstrike(task) {
     task.completed = !task.completed;
     var csrftoken = this.getCookie("csrftoken");
-    var url = `http://127.0.0.1:8000/api/task-update/${task.id}/`;
+    var url = `/api/task-update/${task.id}/`;
     fetch(url, {
       method: "POST",
       headers: {
