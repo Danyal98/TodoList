@@ -151,6 +151,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+    "https://todo-list98.herokuapp.com/"
 ]
 
 prod_db = dj_database_url.config(conn_max_age=500)
