@@ -1,0 +1,22 @@
+{
+  "id": "danyal",
+  "api": {
+    "config_vars_prefix": "DANYAL",
+    "config_vars": [
+      "DANYAL_URL"
+    ],
+    "password": "CHANGEME",
+    "sso_salt": "CHANGEME",
+    "regions": [
+      "eu",
+      "us"
+    ],
+    "requires": [],
+    "production": {
+      "base_url": "https://myaddon.com/heroku/resources",
+      "sso_url": "https://myaddon.com/sso/login"
+    },
+    "version": "3"
+  },
+  "name": "dashboard"
+}
