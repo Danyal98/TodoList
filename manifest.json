@@ -1,22 +1,25 @@
 {
-  "id": "danyal",
-  "api": {
-    "config_vars_prefix": "DANYAL",
-    "config_vars": [
-      "DANYAL_URL"
-    ],
-    "password": "CHANGEME",
-    "sso_salt": "CHANGEME",
-    "regions": [
-      "eu",
-      "us"
-    ],
-    "requires": [],
-    "production": {
-      "base_url": "https://myaddon.com/heroku/resources",
-      "sso_url": "https://myaddon.com/sso/login"
+  "short_name": "React App",
+  "name": "Create React App Sample",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
     },
-    "version": "3"
-  },
-  "name": "dashboard"
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
 }
