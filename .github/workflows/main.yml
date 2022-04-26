@@ -27,6 +27,8 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
+        env: 
+          ACCESS_TOKEN: ${{ secrets.FIRST_SECRET}}
         run: 
           ./Test.sh
 
