@@ -27,10 +27,12 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
+        
         env: 
           ACCESS_TOKEN: ${{ secrets.FIRST_SECRET}}
         run: 
-          ./Test.sh
+          chmod +x "${GITHUB_WORKSPACE}/.github/Test.sh"
+          "${GITHUB_WORKSPACE}/.github/Test.sh"
 
      # Runs a set of commands using the runners shell
       - name: Run a multi-line script
