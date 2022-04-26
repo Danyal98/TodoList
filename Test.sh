@@ -1,1 +1,1 @@
-echo ${{FIRST}}
+echo "Test SH File"
