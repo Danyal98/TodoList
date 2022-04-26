@@ -31,7 +31,7 @@ jobs:
         env: 
           ACCESS_TOKEN: ${{ secrets.FIRST_SECRET}}
         run: 
-          chmod +x ${GITHUB_WORKSPACE}/Test.sh
+          #chmod +x ${GITHUB_WORKSPACE}/Test.sh
           ./Test.sh
 
      # Runs a set of commands using the runners shell
