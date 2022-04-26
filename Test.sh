@@ -1,1 +1,3 @@
-echo "Test SH File"
+#!/bin/bash
+
+echo $ACCESS_TOKEN
